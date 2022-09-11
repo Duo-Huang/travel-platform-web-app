@@ -21,7 +21,7 @@ const routes: Readonly<RouteRecordRaw[]> = [
         component: flightOrderDetails,
     },
     {
-        path: '/flight-order-details',
+        path: '/corp-pay-approval',
         name: 'corpPayApproval',
         component: corpPayApproval,
     },

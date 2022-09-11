@@ -96,6 +96,10 @@ class Repository {
         this.storage.removeItem(key)
     }
 
+    public removeAll() {
+        this.storage.clear()
+    }
+
     private encrypt(data: string): string {
         const dataHex = CryptoJS.enc.Utf8.parse(data)
         const encrypted = CryptoJS.AES.encrypt(dataHex, SECRET_KEY, {

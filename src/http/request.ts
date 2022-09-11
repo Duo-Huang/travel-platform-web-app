@@ -23,6 +23,10 @@ const xhr = <T>(reqConfig: AppHttp.RequestConfig) =>
         .request(reqConfig)
         .then((res: AxiosResponse<AppHttp.Response<T>>) => Promise.resolve(res.data))
         .catch((err: AxiosError<AppHttp.Response<any>>) => {
+            if ((err.config as AppHttp.RequestConfig).ignoreGlobalErrorMsg) {
+                // 可以针对单个api做全局错误处理的忽略，注意忽略全局错误处理后，需要在调用的地方自己处理业务异常
+                return Promise.reject(err)
+            }
             return errorProcessor(err) // 重试后统一处理一次
         })
 

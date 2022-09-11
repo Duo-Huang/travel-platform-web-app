@@ -1,5 +1,3 @@
-import { s } from 'vitest/dist/index-4a906fa4'
-
 export interface FlightListItem {
     pID: string
     airlineInfo: {

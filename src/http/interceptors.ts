@@ -40,10 +40,6 @@ export const errorProcessor = (err: AxiosError<AppHttp.Response<any>>) => {
         return Promise.reject(err)
     }
     // 处理业务异常
-    if ((config as AppHttp.RequestConfig).ignoreGlobalErrorMsg) {
-        // 可以针对单个api做全局错误处理的忽略，注意忽略全局错误处理后，需要在调用的地方自己处理业务异常
-        return Promise.reject(err)
-    }
     messager.error(HTTP_ERROR_CODE_MSG[code] || message || HTTP_ERROR_CODE_MSG[HTTP_ERROR_CODE.UNKNOWN])
     return Promise.reject(err)
 }

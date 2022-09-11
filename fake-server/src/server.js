@@ -1,5 +1,7 @@
 const express = require('express')
 const { flights, flightDetails } = require('./db/flights')
+const { flightOrderDetails }  = require('./db/orders')
+const { corpPayApprovers, corpPayProjects }  = require('./db/clientManagement')
 const { wrapperRes } = require('./utils')
 
 const app = express()
@@ -28,7 +30,7 @@ app.get('/flights', (req, res) => {
 
 app.get('/flights/:id', (req, res) => {
     setTimeout(() => {
-        if(req.query.cpOn) {
+        if(req.query.cpOn && JSON.parse(req.query.cpOn)) {
            return res.status(500).json({
                 code: 10011,
                 message: '系统内部错误',
@@ -39,9 +41,41 @@ app.get('/flights/:id', (req, res) => {
     }, 1500)
 })
 
-app.post('/rent-out-requests', (req, res) => {
+app.get('/flights-orders/:orderId', (req, res) => {
     setTimeout(() => {
-        res.status(500).json(postedHouseInfo)
+        if(req.query.orderDue && JSON.parse(req.query.orderDue)) {
+           return res.status(499).json({
+                code: 20221,
+                message: '订单失效',
+                data: null
+           })
+        }
+        return res.status(200).json(wrapperRes(flightOrderDetails))
+    }, 1500)
+})
+
+app.get('/corporate-payment/approvers', (req, res) => {
+    setTimeout(() => {
+        res.status(200).json(wrapperRes(corpPayApprovers))
+    }, 1500)
+})
+
+app.get('/corporate-payment/projects', (req, res) => {
+    setTimeout(() => {
+        if(req.query.apOn && JSON.parse(req.query.apOn)) {
+            return res.status(500).json({
+                 code: 11011,
+                 message: '系统内部错误',
+                 data: null
+            })
+         }
+         return res.status(200).json(wrapperRes(corpPayProjects))
+    }, 1500)
+})
+
+app.post('/flights-orders/:orderId/coporate-payment-approval', (req, res) => {
+    setTimeout(() => {
+        res.status(200).json(req.body)
     }, 1500)
 })
 

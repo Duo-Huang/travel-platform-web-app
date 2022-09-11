@@ -8,6 +8,7 @@
 
 <style lang="scss">
 #app {
-    margin: 0 30px;
+    width: 1400px;
+    margin: auto;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div class="flights">
         <h1>航班查询</h1>
-        <el-button @click="switchCp">切换分区CP场景</el-button>
+        <el-button @click="switchCp">{{ cpOn ? '关闭' : '开启' }}分区CP场景</el-button>
         <p style="color: chocolate">
             注：👆🏻查询航班详情信息将模拟500，如需模拟断网请自行控制台操作关闭network，结合控制台观察页面一致性的变化，如重试，提示，隐藏后续入口等
         </p>
@@ -59,6 +59,7 @@ import repository from '@/utils/repository' // DEBUG CP
 import flightDetailsCom from './flightDetails.vue'
 import messager from '@/utils/message'
 
+
 interface Flights extends FlightListItem {
     showDetails: boolean
     loading: boolean
@@ -66,24 +67,17 @@ interface Flights extends FlightListItem {
 
 const flights = ref<Flights[]>([])
 const lodingList = ref(true)
-const store = useStore<AppState.RootState>()
-
-repository.remove('cpOn') // DEBUG CP
 
 onMounted(async () => {
     const data = await getFlights().finally(() => (lodingList.value = false))
     flights.value = data.map((x) => ({ ...x, showDetails: false, loading: false }))
 })
 
+const store = useStore<AppState.RootState>()
+
 const flightDetails = computed(() => store.state.flights.flightDetails)
 
 const childs = ref<Array<InstanceType<typeof flightDetailsCom>> | null[]>([null])
-
-const switchCp = () => {
-    // DEBUG CP
-    repository.set('cpOn', true)
-    messager.warning('CP场景已开启，可刷新后关闭')
-}
 
 const viewFlightDetail = async (id: string, index: number) => {
     const flight = flights.value.find((x) => x.pID === id)
@@ -104,13 +98,20 @@ const viewFlightDetail = async (id: string, index: number) => {
     }
     flight!.showDetails = !flight!.showDetails
 }
+
+// DEBUG Code
+const cpOn = ref<boolean>(!!repository.get('cpOn') || false)
+messager.warning(`AP场景已${cpOn.value ? '开启' : '关闭'}`, { duration: 5000 })
+const switchCp = () => {
+    // DEBUG CP
+    cpOn.value = !cpOn.value
+    repository.set('cpOn', cpOn.value, true)
+    messager.warning(`AP场景已${cpOn.value ? '开启' : '关闭'}`)
+}
 </script>
 
 <style lang="scss" scoped>
 .flights {
-    width: 1200px;
-    margin: auto;
-
     .search {
         height: 200px;
         margin: 50px 0;
