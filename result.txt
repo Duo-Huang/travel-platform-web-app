@@ -1,0 +1,117 @@
+travel-platform-web-app
+├─.editorconfig
+├─.gitignore
+├─.nvmrc
+├─.prettierrc
+├─README.md
+├─auto-imports.d.ts
+├─components.d.ts
+├─index.html
+├─package.json
+├─pnpm-lock.yaml
+├─tsconfig.json
+├─tsconfig.node.json
+├─vite.config.ts
+├─src
+|  ├─App.vue
+|  ├─auto-imports.d.ts
+|  ├─components.d.ts
+|  ├─env.d.ts
+|  ├─main.ts
+|  ├─views
+|  |   ├─flights
+|  |   |    ├─flightDetails.vue
+|  |   |    ├─flights.vue
+|  |   |    ├─components
+|  |   |    |     └cabinInfo.vue
+|  |   ├─flight-order-details
+|  |   |          └flightOrderDetails.vue
+|  |   ├─flight-order-create
+|  |   |          └flightOrderCreate.vue
+|  |   ├─corp-pay-approval
+|  |   |         └corpPayApproval.vue
+|  ├─utils
+|  |   ├─message.ts
+|  |   └repository.ts
+|  ├─types
+|  |   ├─clientManagement.d.ts
+|  |   ├─common.d.ts
+|  |   ├─flights.d.ts
+|  |   ├─orders.d.ts
+|  |   └store.d.ts
+|  ├─tests
+|  |   ├─utils
+|  |   |   └index.ts
+|  |   ├─spec
+|  |   |  ├─views
+|  |   |  |   ├─components
+|  |   |  |   |     └cabinInfo.spec.ts
+|  |   |  ├─utils
+|  |   |  |   └repository.spec.ts
+|  |   |  ├─store
+|  |   |  |   ├─flights
+|  |   |  |   |    ├─actions.spec.ts
+|  |   |  |   |    └mutations.spec.ts
+|  |   |  ├─http
+|  |   |  |  └request.spec.ts
+|  |   |  ├─data-access
+|  |   |  |      ├─clientManagement.spec.ts
+|  |   |  |      ├─flights.spec.ts
+|  |   |  |      └orders.spec.ts
+|  |   ├─fixtures
+|  |   |    ├─clientManagement.ts
+|  |   |    ├─flights.ts
+|  |   |    └orders.ts
+|  ├─styles
+|  |   ├─common.scss
+|  |   ├─component-rewrite.scss
+|  |   ├─mixins.scss
+|  |   ├─normalize.css
+|  |   └variable.scss
+|  ├─store
+|  |   ├─index.ts
+|  |   ├─flights
+|  |   |    ├─actions.ts
+|  |   |    ├─index.ts
+|  |   |    ├─mutations.ts
+|  |   |    └state.ts
+|  ├─router
+|  |   └index.ts
+|  ├─http
+|  |  ├─index.ts
+|  |  ├─interceptors.ts
+|  |  └request.ts
+|  ├─data-access
+|  |      ├─clientManagement.ts
+|  |      ├─flights.ts
+|  |      ├─index.ts
+|  |      └orders.ts
+|  ├─constants
+|  |     ├─common.ts
+|  |     ├─http.ts
+|  |     ├─index.ts
+|  |     └store.ts
+|  ├─components
+|  ├─assets
+|  |   └direction-right.svg
+├─public
+|   └vite.svg
+├─fake-server
+|      ├─package.json
+|      ├─pnpm-lock.yaml
+|      ├─src
+|      |  ├─server.js
+|      |  ├─utils
+|      |  |   └index.js
+|      |  ├─db
+|      |  | ├─clientManagement.js
+|      |  | ├─flights.js
+|      |  | └orders.js
+├─env
+|  ├─.env.local
+|  ├─.env.production
+|  └.env.sit
+├─.vscode
+|    ├─extensions.json
+|    ├─launch.json
+|    └settings.json

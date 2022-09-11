@@ -7,9 +7,10 @@
         <p style="color: chocolate">
             注：👆🏻查询项目列表将模拟500，如需模拟断网请自行控制台操作关闭network，结合控制台观察页面一致性的变化，如重试，交互降级等，可无感知继续提交测试可用性
         </p>
+        <hr />
         <!--  -->
 
-        <el-dialog v-model="dialogVisible" width="30%" :show-close="false">
+        <el-dialog v-model="dialogVisible" width="30%" :show-close="false" :close-on-click-modal="false">
             <span>该订单由于超过30分钟未支付，已经自动取消，您可以重新下单后尽快支付</span>
             <template #footer>
                 <span class="dialog-footer">
@@ -26,47 +27,96 @@
                 </span>
             </template>
         </el-dialog>
-        <div>
-            <div>航班信息</div>
-            <div>成都 - 广州</div>
-        </div>
-        <div>
-            <div>乘机人</div>
-            <div>小明</div>
-            <br />
-            <br />
-            <br />
-        </div>
-        <div class="form">
-            <el-form ref="formRef" label-position="top" label-width="100px" :model="formModel" :rules="formRules">
-                <el-form-item label="审批人" prop="approver">
-                    <el-select v-model="formModel.approver" placeholder="请选择审批人" style="width: 100%">
-                        <el-option v-for="{ name, email } in approvers" :key="name" :label="name" :value="name" />
-                    </el-select>
-                </el-form-item>
-                <el-form-item label="项目名称" prop="project">
-                    <el-input
-                        v-if="interactionFallbck.l2"
-                        v-model="formModel.project"
-                        placeholder="请输入项目名称"
-                    ></el-input>
-                    <el-select
-                        v-else
-                        :allow-create="interactionFallbck.l1"
-                        filterable
-                        v-model="formModel.project"
-                        placeholder="请选择项目名称"
-                        style="width: 100%"
+        <div class="main">
+            <div class="left-side">
+                <div class="section">
+                    <div class="title flight">航班信息</div>
+                    <div class="flight-details">
+                        <span>单程</span>
+                        <div class="city">
+                            {{ orderDetails?.flight.fCityName }} - {{ orderDetails?.flight.tCityName }}
+                        </div>
+                        <div class="time">
+                            {{ orderDetails?.flight.fDate }} {{ orderDetails?.flight.fTime }} -
+                            {{ orderDetails?.flight.tDate }} {{ orderDetails?.flight.tTime }}
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="title">乘机人</div>
+
+                    <div class="passenger">
+                        <el-icon><i-ep-user /></el-icon>
+                        <span>{{ orderDetails?.passenger.name }}</span>
+                    </div>
+                </div>
+                <div class="section form">
+                    <div class="title">审批信息</div>
+                    <el-form
+                        ref="formRef"
+                        label-position="top"
+                        label-width="100px"
+                        :model="formModel"
+                        :rules="formRules"
                     >
-                        <el-option v-for="{ code, name } in projects" :key="code" :label="name" :value="name" />
-                    </el-select>
-                </el-form-item>
-                <el-form-item>
-                    <el-button type="primary" size="large" :loading="submitLoading" @click="submit(formRef)"
-                        >提交</el-button
-                    >
-                </el-form-item>
-            </el-form>
+                        <el-form-item label="审批人" prop="approver">
+                            <el-select v-model="formModel.approver" placeholder="请选择审批人" style="width: 100%">
+                                <el-option
+                                    v-for="{ name, email } in approvers"
+                                    :key="name"
+                                    :label="name"
+                                    :value="name"
+                                />
+                            </el-select>
+                        </el-form-item>
+                        <el-form-item label="项目名称" prop="project">
+                            <el-input
+                                v-if="interactionFallbck.l2"
+                                v-model="formModel.project"
+                                placeholder="请输入项目名称"
+                            ></el-input>
+                            <el-select
+                                v-else
+                                :allow-create="interactionFallbck.l1"
+                                filterable
+                                v-model="formModel.project"
+                                placeholder="请选择项目名称"
+                                style="width: 100%"
+                            >
+                                <el-option v-for="{ code, name } in projects" :key="code" :label="name" :value="name" />
+                            </el-select>
+                        </el-form-item>
+                        <el-form-item>
+                            <el-button type="primary" size="large" :loading="submitLoading" @click="submit(formRef)"
+                                >提交</el-button
+                            >
+                        </el-form-item>
+                    </el-form>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="fee-details">费用明细</div>
+                <div class="item">
+                    <span>成人票价</span>
+                    <span>￥{{ orderDetails?.fee.price }} ×1</span>
+                </div>
+                <div class="item">
+                    <span>机建</span>
+                    <span>￥{{ orderDetails?.fee.airportBuding }} ×1</span>
+                </div>
+                <div class="item">
+                    <span>燃油</span>
+                    <span>￥{{ orderDetails?.fee.fuelSurcharge }} ×1</span>
+                </div>
+                <div class="item">
+                    <span>基础服务费</span>
+                    <span>￥{{ orderDetails?.fee.service }} ×1</span>
+                </div>
+                <div class="total">
+                    <span>总计</span>
+                    <span class="price">￥{{ orderDetails?.fee.total }}</span>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -170,7 +220,6 @@ const submit = async (formInstance: FormInstance | undefined) => {
     }
 }
 
-
 // DEBUG Code
 const apOn = ref<boolean>(!!repository.get('apOn') || false)
 const orderDueOn = ref<boolean>(!!repository.get('orderDue') || false)
@@ -191,3 +240,101 @@ const switchOrderDue = () => {
     messager.warning(`业务异常场景-订单过期已${orderDueOn.value ? '开启' : '关闭'}`)
 }
 </script>
+
+<style lang="scss" scoped>
+.corp-pay-approval {
+    .main {
+        @include flex(space-between, flex-start);
+
+        > .left-side {
+            flex-grow: 2;
+            margin-right: 15px;
+
+            .section {
+                background-color: #fff;
+                padding: 10px 20px;
+                margin-bottom: 20px;
+
+                .title {
+                    font-size: 16px;
+                    font-weight: bold;
+                    height: 40px;
+                    line-height: 40px;
+                    margin-bottom: 15px;
+                }
+
+                .flight {
+                    border-bottom: 1px solid #ddd;
+                }
+
+                .flight-details {
+                    @include flex();
+
+                    > span {
+                        background-color: #4f557d;
+                        color: #fff;
+                        font-size: 12px;
+                        padding: 5px 10px;
+                    }
+
+                    > * {
+                        margin-right: 25px;
+                    }
+
+                    > .city {
+                        font-weight: bold;
+                        font-size: 18px;
+                    }
+
+                    > .time {
+                        font-size: 14px;
+                    }
+                }
+
+                > .passenger {
+                    @include flex();
+
+                    > span {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+
+        > .right-side {
+            flex-grow: 1;
+            background-color: #fff;
+            height: max-content;
+            padding: 20px 20px;
+
+            > .fee-details {
+                margin-bottom: 20px;
+            }
+
+            > .item {
+                font-size: 14px;
+                margin-bottom: 10px;
+
+                @include flex(space-between);
+            }
+
+            > .total {
+                border-top: 1px dashed #ddd;
+                padding: 15px 0;
+
+                @include row(flex-end);
+
+                > span:first-child {
+                    margin-right: 10px;
+                }
+
+                > .price {
+                    color: $text-money;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+</style>

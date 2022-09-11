@@ -1,0 +1,138 @@
+Date : 2022-09-11 18:41:42
+Directory : /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app
+Total : 71 files,  4744 codes, 208 comments, 789 blanks, all 5741 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| YAML               |          2 |      2,397 |          0 |        390 |      2,787 |
+| TypeScript         |         43 |      1,286 |         57 |        201 |      1,544 |
+| Vue                |          7 |        550 |          2 |         80 |        632 |
+| JavaScript         |          5 |        196 |         13 |         18 |        227 |
+| CSS                |          1 |        146 |        131 |         75 |        352 |
+| JSON               |          4 |         86 |          0 |          4 |         90 |
+| SCSS               |          4 |         39 |          2 |         11 |         52 |
+| JSON with Comments |          1 |         20 |          3 |          1 |         24 |
+| HTML               |          1 |         13 |          0 |          1 |         14 |
+| Markdown           |          1 |          9 |          0 |          8 |         17 |
+| XML                |          2 |          2 |          0 |          0 |          2 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                           | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                              |         71 |      4,744 |        208 |        789 |      5,741 |
+| fake-server                                                                                                                    |          7 |        749 |         13 |        113 |        875 |
+| fake-server/src                                                                                                                |          5 |        196 |         13 |         18 |        227 |
+| fake-server/src/db                                                                                                             |          3 |        134 |          0 |          6 |        140 |
+| fake-server/src/utils                                                                                                          |          1 |          1 |          0 |          1 |          2 |
+| public                                                                                                                         |          1 |          1 |          0 |          0 |          1 |
+| src                                                                                                                            |         53 |      1,928 |        181 |        359 |      2,468 |
+| src/assets                                                                                                                     |          1 |          1 |          0 |          0 |          1 |
+| src/constants                                                                                                                  |          4 |         40 |         15 |          8 |         63 |
+| src/data-access                                                                                                                |          4 |         66 |          1 |         11 |         78 |
+| src/http                                                                                                                       |          3 |        120 |         17 |         26 |        163 |
+| src/router                                                                                                                     |          1 |         36 |          0 |          5 |         41 |
+| src/store                                                                                                                      |          5 |         38 |          0 |         12 |         50 |
+| src/store/flights                                                                                                              |          4 |         28 |          0 |          9 |         37 |
+| src/styles                                                                                                                     |          5 |        185 |        133 |         86 |        404 |
+| src/tests                                                                                                                      |         12 |        588 |          4 |         69 |        661 |
+| src/tests/fixtures                                                                                                             |          3 |        157 |          0 |          9 |        166 |
+| src/tests/spec                                                                                                                 |          8 |        419 |          4 |         58 |        481 |
+| src/tests/spec/data-access                                                                                                     |          3 |         47 |          0 |          9 |         56 |
+| src/tests/spec/http                                                                                                            |          1 |        221 |          2 |         24 |        247 |
+| src/tests/spec/store                                                                                                           |          2 |         31 |          0 |         10 |         41 |
+| src/tests/spec/store/flights                                                                                                   |          2 |         31 |          0 |         10 |         41 |
+| src/tests/spec/utils                                                                                                           |          1 |         89 |          2 |         10 |        101 |
+| src/tests/spec/views                                                                                                           |          1 |         31 |          0 |          5 |         36 |
+| src/tests/spec/views/components                                                                                                |          1 |         31 |          0 |          5 |         36 |
+| src/tests/utils                                                                                                                |          1 |         12 |          0 |          2 |         14 |
+| src/types                                                                                                                      |          5 |        110 |          0 |         15 |        125 |
+| src/utils                                                                                                                      |          2 |        145 |          3 |         35 |        183 |
+| src/views                                                                                                                      |          6 |        538 |          2 |         77 |        617 |
+| src/views/corp-pay-approval                                                                                                    |          1 |        174 |          2 |         18 |        194 |
+| src/views/flight-order-create                                                                                                  |          1 |         23 |          0 |          4 |         27 |
+| src/views/flight-order-details                                                                                                 |          1 |         25 |          0 |          5 |         30 |
+| src/views/flights                                                                                                              |          3 |        316 |          0 |         50 |        366 |
+| src/views/flights/components                                                                                                   |          1 |         69 |          0 |         10 |         79 |
++--------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                                                       | language           | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/.prettierrc                                           | JSON               |         15 |          0 |          1 |         16 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/README.md                                             | Markdown           |          9 |          0 |          8 |         17 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/auto-imports.d.ts                                     | TypeScript         |          3 |          1 |          2 |          6 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/components.d.ts                                       | TypeScript         |         22 |          3 |          3 |         28 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/fake-server/package.json                              | JSON               |         19 |          0 |          1 |         20 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/fake-server/pnpm-lock.yaml                            | YAML               |        534 |          0 |         94 |        628 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/fake-server/src/db/clientManagement.js                | JavaScript         |         28 |          0 |          2 |         30 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/fake-server/src/db/flights.js                         | JavaScript         |         76 |          0 |          2 |         78 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/fake-server/src/db/orders.js                          | JavaScript         |         30 |          0 |          2 |         32 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/fake-server/src/server.js                             | JavaScript         |         61 |         13 |         11 |         85 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/fake-server/src/utils/index.js                        | JavaScript         |          1 |          0 |          1 |          2 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/index.html                                            | HTML               |         13 |          0 |          1 |         14 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/package.json                                          | JSON               |         43 |          0 |          1 |         44 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/pnpm-lock.yaml                                        | YAML               |      1,863 |          0 |        296 |      2,159 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/public/vite.svg                                       | XML                |          1 |          0 |          0 |          1 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/App.vue                                           | Vue                |         12 |          0 |          3 |         15 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/assets/direction-right.svg                        | XML                |          1 |          0 |          0 |          1 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/auto-imports.d.ts                                 | TypeScript         |          3 |          1 |          2 |          6 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/components.d.ts                                   | TypeScript         |         25 |          3 |          3 |         31 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/constants/common.ts                               | TypeScript         |          1 |          0 |          1 |          2 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/constants/http.ts                                 | TypeScript         |         30 |         15 |          4 |         49 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/constants/index.ts                                | TypeScript         |          3 |          0 |          1 |          4 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/constants/store.ts                                | TypeScript         |          6 |          0 |          2 |          8 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/data-access/clientManagement.ts                   | TypeScript         |         32 |          1 |          3 |         36 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/data-access/flights.ts                            | TypeScript         |         20 |          0 |          4 |         24 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/data-access/index.ts                              | TypeScript         |          3 |          0 |          1 |          4 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/data-access/orders.ts                             | TypeScript         |         11 |          0 |          3 |         14 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/env.d.ts                                          | TypeScript         |         12 |          2 |          3 |         17 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/http/index.ts                                     | TypeScript         |          1 |          0 |          1 |          2 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/http/interceptors.ts                              | TypeScript         |         74 |         13 |         17 |        104 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/http/request.ts                                   | TypeScript         |         45 |          4 |          8 |         57 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/main.ts                                           | TypeScript         |          9 |          0 |          4 |         13 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/router/index.ts                                   | TypeScript         |         36 |          0 |          5 |         41 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/store/flights/actions.ts                          | TypeScript         |         13 |          0 |          3 |         16 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/store/flights/index.ts                            | TypeScript         |          3 |          0 |          1 |          4 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/store/flights/mutations.ts                        | TypeScript         |          8 |          0 |          3 |         11 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/store/flights/state.ts                            | TypeScript         |          4 |          0 |          2 |          6 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/store/index.ts                                    | TypeScript         |         10 |          0 |          3 |         13 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/styles/common.scss                                | SCSS               |          8 |          0 |          2 |         10 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/styles/component-rewrite.scss                     | SCSS               |          0 |          0 |          1 |          1 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/styles/mixins.scss                                | SCSS               |         20 |          0 |          4 |         24 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/styles/normalize.css                              | CSS                |        146 |        131 |         75 |        352 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/styles/variable.scss                              | SCSS               |         11 |          2 |          4 |         17 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/tests/fixtures/clientManagement.ts                | TypeScript         |         37 |          0 |          3 |         40 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/tests/fixtures/flights.ts                         | TypeScript         |         85 |          0 |          3 |         88 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/tests/fixtures/orders.ts                          | TypeScript         |         35 |          0 |          3 |         38 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/tests/spec/data-access/clientManagement.spec.ts   | TypeScript         |         22 |          0 |          4 |         26 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/tests/spec/data-access/flights.spec.ts            | TypeScript         |         15 |          0 |          3 |         18 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/tests/spec/data-access/orders.spec.ts             | TypeScript         |         10 |          0 |          2 |         12 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/tests/spec/http/request.spec.ts                   | TypeScript         |        221 |          2 |         24 |        247 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/tests/spec/store/flights/actions.spec.ts          | TypeScript         |         20 |          0 |          7 |         27 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/tests/spec/store/flights/mutations.spec.ts        | TypeScript         |         11 |          0 |          3 |         14 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/tests/spec/utils/repository.spec.ts               | TypeScript         |         89 |          2 |         10 |        101 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/tests/spec/views/components/cabinInfo.spec.ts     | TypeScript         |         31 |          0 |          5 |         36 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/tests/utils/index.ts                              | TypeScript         |         12 |          0 |          2 |         14 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/types/clientManagement.d.ts                       | TypeScript         |          8 |          0 |          2 |         10 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/types/common.d.ts                                 | TypeScript         |         20 |          0 |          4 |         24 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/types/flights.d.ts                                | TypeScript         |         36 |          0 |          2 |         38 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/types/orders.d.ts                                 | TypeScript         |         35 |          0 |          4 |         39 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/types/store.d.ts                                  | TypeScript         |         11 |          0 |          3 |         14 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/utils/message.ts                                  | TypeScript         |         42 |          0 |          8 |         50 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/utils/repository.ts                               | TypeScript         |        103 |          3 |         27 |        133 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/views/corp-pay-approval/corpPayApproval.vue       | Vue                |        174 |          2 |         18 |        194 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/views/flight-order-create/flightOrderCreate.vue   | Vue                |         23 |          0 |          4 |         27 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/views/flight-order-details/flightOrderDetails.vue | Vue                |         25 |          0 |          5 |         30 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/views/flights/components/cabinInfo.vue            | Vue                |         69 |          0 |         10 |         79 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/views/flights/flightDetails.vue                   | Vue                |         42 |          0 |         10 |         52 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/src/views/flights/flights.vue                         | Vue                |        205 |          0 |         30 |        235 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/tsconfig.json                                         | JSON with Comments |         20 |          3 |          1 |         24 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/tsconfig.node.json                                    | JSON               |          9 |          0 |          1 |         10 |
+| /Users/duohuang/Documents/dark-horse/examination/travel-platform-web-app/vite.config.ts                                        | TypeScript         |         69 |          7 |          3 |         79 |
+| Total                                                                                                                          |                    |      4,744 |        208 |        789 |      5,741 |
++--------------------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

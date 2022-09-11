@@ -70,7 +70,7 @@ const buyTicket = () => {
 
     .price {
         font-size: 24px;
-        color: #0b52d1;
+        color: $text-money;
         font-weight: bold;
         margin-right: 20px;
     }

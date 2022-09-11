@@ -21,6 +21,7 @@ declare module '@vue/runtime-core' {
     IEpArrowRightBold: typeof import('~icons/ep/arrow-right-bold')['default']
     IEpLoading: typeof import('~icons/ep/loading')['default']
     IEpRight: typeof import('~icons/ep/right')['default']
+    IEpUser: typeof import('~icons/ep/user')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

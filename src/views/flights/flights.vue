@@ -5,6 +5,7 @@
         <p style="color: chocolate">
             注：👆🏻查询航班详情信息将模拟500，如需模拟断网请自行控制台操作关闭network，结合控制台观察页面一致性的变化，如重试，提示，隐藏后续入口等
         </p>
+        <hr>
         <div class="search">搜索区域</div>
         <div class="list" v-loading="lodingList">
             <div class="item" v-for="({ airlineInfo, ...others }, index) in flights">
@@ -193,7 +194,7 @@ const switchCp = () => {
                 }
 
                 .price {
-                    color: #0b52d1;
+                    color: $text-money;
                     font-size: 24px;
                     font-weight: bold;
                 }
@@ -209,7 +210,7 @@ const switchCp = () => {
                     justify-content: center;
                     align-items: center;
                     cursor: pointer;
-                    background-color: #0b52d1;
+                    background-color: $text-money;
                     color: #fff;
                     font-weight: bold;
 
@@ -220,7 +221,7 @@ const switchCp = () => {
                     &.active {
                         background-color: #fff;
                         border: 1px solid #d1d1d1;
-                        color: #0b52d1;
+                        color: $text-money;
 
                         > .icon {
                             transform: rotate(180deg);
