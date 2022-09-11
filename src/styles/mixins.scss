@@ -1,0 +1,23 @@
+@mixin flex($just-content: flex-start, $align-items: stretch, $flow: row, $wrap: nowrap) {
+    display: flex;
+    justify-content: $just-content;
+    align-items: $align-items;
+    flex-flow: $flow $wrap;
+}
+
+@mixin row($space-between: space-between) {
+    @include flex($space-between, center);
+}
+
+@mixin text-overflow() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin text-line-clamp($line: 1) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    overflow: hidden;
+}
