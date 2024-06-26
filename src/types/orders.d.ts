@@ -1,4 +1,4 @@
-import { CorpPayApprover, CorpPayProject } from './clientManagement'
+import type { CorpPayApprover, CorpPayProject } from './clientManagement'
 
 export interface FlightOrderDetails {
     id: string

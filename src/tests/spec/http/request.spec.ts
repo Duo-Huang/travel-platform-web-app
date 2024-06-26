@@ -1,7 +1,7 @@
 import MockAdapter from 'axios-mock-adapter'
 import request, { http } from '@/http/request'
 import messager from '@/utils/message'
-import { HTTP_STATUS, HTTP_ERROR_CODE, HTTP_ERROR_CODE_MSG } from '@/constants/HTTP'
+import { HTTP_STATUS, HTTP_ERROR_CODE, HTTP_ERROR_CODE_MSG } from '@/constants/http'
 
 const ApiStub = new MockAdapter(http)
 

@@ -1,4 +1,4 @@
-import { AxiosError, AxiosStatic, AxiosInstance } from 'axios'
+import type { AxiosError, AxiosStatic, AxiosInstance } from 'axios'
 import { HTTP } from '@/constants'
 import messager from '@/utils/message'
 

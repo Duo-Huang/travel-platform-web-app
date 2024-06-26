@@ -1,4 +1,4 @@
-import { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
+import type { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
 
 declare global {
     namespace AppHttp {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// console.log(import.meta.env.APP_API_BASE_URL)
+console.log(import.meta.env.APP_API_BASE_URL)
 </script>
 
 <template>

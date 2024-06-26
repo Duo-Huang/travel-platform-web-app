@@ -1,4 +1,4 @@
-import { FlightListItem, FlightListItemDetail } from './flights'
+import type { FlightListItem, FlightListItemDetail } from './flights'
 
 declare global {
     namespace AppState {

@@ -1,4 +1,4 @@
-import { createRouter, RouteRecordRaw, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import flights from '@/views/flights/flights.vue'
 import flightOrderCreate from '@/views/flight-order-create/flightOrderCreate.vue'
 import flightOrderDetails from '@/views/flight-order-details/flightOrderDetails.vue'

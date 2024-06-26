@@ -1,4 +1,4 @@
-import axios, { AxiosResponse, AxiosError } from 'axios'
+import axios, { type AxiosResponse, type AxiosError } from 'axios'
 import { errorProcessor, useRetry } from './interceptors'
 
 const http = axios.create({

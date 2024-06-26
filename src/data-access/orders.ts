@@ -11,3 +11,4 @@ export const getFlightOrderDetails = (orderId: string) => {
 
 export const submitCorpPayApproval = (orderId: string, corpPayApprovalInfo: CorpPayApprovalInfo) =>
     request.post(`/flights-orders/${orderId}/coporate-payment-approval`, corpPayApprovalInfo)
+    
