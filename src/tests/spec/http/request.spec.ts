@@ -112,7 +112,7 @@ describe('Test error processing for request', () => {
     })
 
     it('Should pop up err message when business error and existed error code mapper in frontend', async () => {
-        ApiStub.onGet('/test-business-error').reply(499, {
+        ApiStub.onGet('/test-business-error').reply(422, {
             code: 20211,
             message: '',
             data: null,
@@ -123,7 +123,7 @@ describe('Test error processing for request', () => {
     })
 
     it('Should pop up err message when business error and no error code mapper in frontend', async () => {
-        ApiStub.onGet('/test-business-error').reply(499, {
+        ApiStub.onGet('/test-business-error').reply(422, {
             code: 20223,
             message: '手机号错误',
             data: null,
@@ -134,7 +134,7 @@ describe('Test error processing for request', () => {
     })
 
     it('Should pop up err message when business error and no error code mapper in frontend and no message in response', async () => {
-        ApiStub.onGet('/test-business-error').reply(499, {
+        ApiStub.onGet('/test-business-error').reply(422, {
             code: 10223,
             message: '',
             data: null,

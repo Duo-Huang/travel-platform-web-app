@@ -1,5 +1,5 @@
 /**
- * 业务错误统一使用499 http status
+ * 业务错误统一使用422 http status
  * 统一定义错误码[response.data.code]
 错误码规范
 统一在一个文件中定义错误码；
@@ -10,7 +10,7 @@
  */
 
 export const HTTP_STATUS = {
-    BUSSINESS_ERROR: 499,
+    UNPROCESSABLE_ENTITY: 422,
     BAD_REQUEST: 400,
     UNAUTHORIZED: 401,
     FORBIDDEN: 403,
@@ -33,7 +33,7 @@ export const HTTP_ERROR_CODE_MSG = {
     [HTTP_ERROR_CODE.ERR_NETWORK]: '请检查您的网络后重试',
     // fallback error msg
     [HTTP_ERROR_CODE.UNKNOWN]: '未知错误',
-    [HTTP_STATUS.BUSSINESS_ERROR]: '业务异常',
+    [HTTP_STATUS.UNPROCESSABLE_ENTITY]: '业务异常',
     // http status error msg
     [HTTP_STATUS.BAD_REQUEST]: '错误的请求',
     [HTTP_STATUS.UNAUTHORIZED]: '未认证的用户',

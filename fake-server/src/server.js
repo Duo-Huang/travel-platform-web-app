@@ -44,7 +44,7 @@ app.get('/flights/:id', (req, res) => {
 app.get('/flights-orders/:orderId', (req, res) => {
     setTimeout(() => {
         if(req.query.orderDue && JSON.parse(req.query.orderDue)) {
-           return res.status(499).json({
+           return res.status(422).json({
                 code: 20221,
                 message: '订单失效',
                 data: null

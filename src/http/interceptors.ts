@@ -34,7 +34,7 @@ export const errorProcessor = (err: AxiosError<AppHttp.Response<any>>) => {
         data: { code, message },
     } = err.response
 
-    if (status !== HTTP_STATUS.BUSSINESS_ERROR) {
+    if (status !== HTTP_STATUS.UNPROCESSABLE_ENTITY) {
         // 处理http status error
         messager.error(HTTP_ERROR_CODE_MSG[status] || HTTP_ERROR_CODE_MSG[HTTP_ERROR_CODE.UNKNOWN])
         return Promise.reject(err)
@@ -48,6 +48,12 @@ export const useError = (instance: AxiosStatic | AxiosInstance) => {
     instance.interceptors.response.use((res) => res, errorProcessor)
 }
 
+/**
+ *
+ * @param instance AxiosStatic | AxiosInstance
+ * @param options global retry config
+ * @returns void
+ */
 export const useRetry = (instance: AxiosStatic | AxiosInstance, options: AppHttp.RetryConfig) => {
     const DEFAULT_RETRY_CONFIG = {
         retries: 3,
@@ -75,7 +81,7 @@ export const useRetry = (instance: AxiosStatic | AxiosInstance, options: AppHttp
     instance.interceptors.response.use(
         (res) => res,
         (err: AxiosError<AppHttp.Response<any>>) => {
-            if (err.message.includes('timeout')) {
+            if (err.message.toLowerCase().includes('timeout')) {
                 // 不重试timeout
                 return Promise.reject(err)
             }
